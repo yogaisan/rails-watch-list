@@ -5,6 +5,9 @@
 
 
 <div class="container">
+  <div class="create-list text-right">
+    <%= link_to "Create a movie list", new_list_path, class: 'btn btn-primary' %>
+  </div>
   <h3 class="text-left">My Lists</h3>
       <div class="cards">
         <% @lists.each do |list| %>
@@ -16,8 +19,4 @@
             </div>
         <% end %>
       </div>
-</div>
-
-<div class="create-list">
-  <%= link_to "Create a movie list", new_list_path, class: 'btn btn-primary' %>
 </div>
