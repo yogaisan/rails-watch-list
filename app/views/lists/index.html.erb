@@ -1,22 +1,28 @@
 <div class="banner">
   <h1 class="text-center">Save any kind of movies</h1>
   <h2 class="text-center text-white">Classic</h2>
+  <p>
+  <span class="text-center" id="banner-typed-text"></span>
+  </p>
 </div>
 
 
 <div class="container">
-  <div class="create-list text-right">
-    <%= link_to "Create a movie list", new_list_path, class: 'btn btn-primary' %>
+
+  <div class="text-right">
+      <%= link_to "Create a movie list", new_list_path, class: 'btn btn-primary' %>
   </div>
-  <h3 class="text-left">My Lists</h3>
-      <div class="cards">
-        <% @lists.each do |list| %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>)">
-              <%= link_to list.name, list_path(list) %>
-              <!--<%= link_to list_path(list) , method: :delete, data: { confirm: "Delete #{list.name}?" } do %>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              <% end %>-->
-            </div>
-        <% end %>
-      </div>
+
+  <h3 class="text-left"><strong>My Lists</strong></h3>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>

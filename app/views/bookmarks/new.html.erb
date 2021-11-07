@@ -1,5 +1,7 @@
+<div class="container form-new">
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
+  <%= f.association :movie, input_html: { class: 'select2' } %>
   <%= f.input :comment %>
-  <%= f.submit class: 'btn btn-danger' %>
+  <%= f.submit class: 'btn btn-info' %>
 <% end %>
+</div>

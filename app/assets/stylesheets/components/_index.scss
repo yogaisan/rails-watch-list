@@ -3,5 +3,10 @@
 @import "avatar";
 @import "navbar";
 @import "banner";
-@import "card";
-@import "container";
+@import "cards";
+@import "movie";
+@import "form";
+
+body {
+  padding-bottom: 20px;
+}
