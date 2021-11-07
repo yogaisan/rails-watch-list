@@ -34,9 +34,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 import { initSelect2 } from '../components/init_select2';
-import AOS from 'aos';
 
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
-  AOS.init();
 });
