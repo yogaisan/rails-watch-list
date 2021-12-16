@@ -11,7 +11,7 @@ class BookmarksController < ApplicationController
     # @list = List.find(params[:list_id])
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
-    @bookmark.save
+    flash[:notice] = @bookmark.errors.full_messages.to_sentence unless @bookmark.save
     redirect_to list_path(@list)
   end
 
